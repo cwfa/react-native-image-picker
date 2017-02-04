@@ -266,8 +266,8 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
       libraryIntent.setType("video/*");
     } else {
       requestCode = REQUEST_LAUNCH_IMAGE_LIBRARY;
-      libraryIntent = new Intent(Intent.ACTION_PICK,
-      MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+      libraryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+      libraryIntent.setType("image/*");
     }
 
     if (libraryIntent.resolveActivity(mReactContext.getPackageManager()) == null) {
